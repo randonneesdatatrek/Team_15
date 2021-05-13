@@ -1,6 +1,6 @@
 import matplotlib.pyplot as img
 import cv2 as cv
-
+import random
 
 def matrixImage(xImg, letter):
     data = img.imread(xImg)
@@ -22,3 +22,11 @@ def writeindataset(matrice, letter):
     fichier.close
 
 matrixImage('dataImzml/train/img1.png', '1')
+
+
+def shuffle() :
+    #shuffle the lines of our file:
+    lines = open(chemin+'dataset.txt').readlines() 
+    random.shuffle(lines)
+    open(chemin+'dataset.txt', 'w').writelines(lines) 
+    print("The dataset is ready")
